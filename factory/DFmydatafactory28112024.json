@@ -1,0 +1,9 @@
+{
+	"name": "DFmydatafactory28112024",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "06305e78-5dd3-4244-b29b-67b29e741d58",
+		"tenantId": "a2580a4a-8a3d-4d44-9869-c1a7bd614cb6"
+	}
+}
