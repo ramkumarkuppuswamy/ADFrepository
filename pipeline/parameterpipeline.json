@@ -36,6 +36,20 @@
 				]
 			}
 		],
+		"parameters": {
+			"pp_filepath": {
+				"type": "string"
+			},
+			"pp_inputdorectory": {
+				"type": "string"
+			},
+			"pp_outputdirectory": {
+				"type": "string"
+			},
+			"pp_filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
