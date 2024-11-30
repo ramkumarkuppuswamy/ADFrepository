@@ -1,0 +1,74 @@
+{
+	"name": "sinkoutput2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "archieve",
+				"fileSystem": "project"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"ProductID": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				},
+				"ProductNumber": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"StandardCost": {
+					"type": "string"
+				},
+				"ListPrice": {
+					"type": "string"
+				},
+				"Size": {
+					"type": "string"
+				},
+				"Weight": {
+					"type": "string"
+				},
+				"ProductCategoryID": {
+					"type": "string"
+				},
+				"ProductModelID": {
+					"type": "string"
+				},
+				"SellStartDate": {
+					"type": "string"
+				},
+				"SellEndDate": {
+					"type": "string"
+				},
+				"DiscontinuedDate": {
+					"type": "string"
+				},
+				"ThumbNailPhoto": {
+					"type": "string"
+				},
+				"ThumbnailPhotoFileName": {
+					"type": "string"
+				},
+				"rowguid": {
+					"type": "string"
+				},
+				"ModifiedDate": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
