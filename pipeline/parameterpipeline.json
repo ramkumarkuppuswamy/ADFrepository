@@ -101,6 +101,9 @@
 			},
 			"pp_filename": {
 				"type": "string"
+			},
+			"pp_archieve": {
+				"type": "string"
 			}
 		},
 		"annotations": []
