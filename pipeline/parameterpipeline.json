@@ -63,6 +63,10 @@
 							"ds_filename": {
 								"value": "@pipeline().parameters.pp_filename",
 								"type": "Expression"
+							},
+							"ds_archieve": {
+								"value": "@pipeline().parameters.pp_archieve",
+								"type": "Expression"
 							}
 						}
 					}
