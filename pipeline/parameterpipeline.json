@@ -150,7 +150,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.pp_outputdirectory",
+								"value": "@pipeline().parameters.pp_inputdirectory",
 								"type": "Expression"
 							},
 							"ds_filename": {
@@ -170,7 +170,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.pp_archieve",
+								"value": "@pipeline().parameters.pp_outputdirectory",
 								"type": "Expression"
 							},
 							"ds_filename": {
@@ -193,6 +193,9 @@
 				"type": "string"
 			},
 			"pp_filename": {
+				"type": "string"
+			},
+			"pp_archieve": {
 				"type": "string"
 			}
 		},
