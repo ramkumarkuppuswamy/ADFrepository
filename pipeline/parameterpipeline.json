@@ -40,7 +40,7 @@
 			"pp_filepath": {
 				"type": "string"
 			},
-			"pp_inputdorectory": {
+			"pp_inputdirectory": {
 				"type": "string"
 			},
 			"pp_outputdirectory": {
