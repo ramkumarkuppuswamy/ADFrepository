@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -51,90 +52,115 @@
 					"batchCount": 2,
 					"activities": [
 						{
-							"name": "Copy data1",
-							"type": "Copy",
+							"name": "If Condition1",
+							"type": "IfCondition",
 							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "DelimitedTextSource",
-									"storeSettings": {
-										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
-										"enablePartitionDiscovery": false
-									},
-									"formatSettings": {
-										"type": "DelimitedTextReadSettings"
-									}
+								"expression": {
+									"value": "@equals(item().name,'SalesLTAddress.txt')",
+									"type": "Expression"
 								},
-								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "parameterdataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.Filepath",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.input",
-											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@item().name",
-											"type": "Expression"
+								"ifFalseActivities": [
+									{
+										"name": "Falsewait",
+										"type": "Wait",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"waitTimeInSeconds": 2
 										}
 									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "parameterdataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.Filepath",
-											"type": "Expression"
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Copy data1_copy1",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
 										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.output",
-											"type": "Expression"
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "DelimitedTextSource",
+												"storeSettings": {
+													"type": "AzureBlobFSReadSettings",
+													"recursive": true,
+													"enablePartitionDiscovery": false
+												},
+												"formatSettings": {
+													"type": "DelimitedTextReadSettings"
+												}
+											},
+											"sink": {
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
-										"ds_filename": {
-											"value": "@item().name",
-											"type": "Expression"
-										}
+										"inputs": [
+											{
+												"referenceName": "parameterdataset",
+												"type": "DatasetReference",
+												"parameters": {
+													"ds_filepath": {
+														"value": "@pipeline().parameters.Filepath",
+														"type": "Expression"
+													},
+													"ds_directory": {
+														"value": "@pipeline().parameters.input",
+														"type": "Expression"
+													},
+													"ds_filename": {
+														"value": "@item().name",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "parameterdataset",
+												"type": "DatasetReference",
+												"parameters": {
+													"ds_filepath": {
+														"value": "@pipeline().parameters.Filepath",
+														"type": "Expression"
+													},
+													"ds_directory": {
+														"value": "@pipeline().parameters.output",
+														"type": "Expression"
+													},
+													"ds_filename": {
+														"value": "@item().name",
+														"type": "Expression"
+													}
+												}
+											}
+										]
 									}
-								}
-							]
+								]
+							}
 						}
 					]
 				}
