@@ -58,7 +58,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(item().name,'SalesLTAddress.txt')",
+									"value": "@activity('Filter1').output.Value",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
