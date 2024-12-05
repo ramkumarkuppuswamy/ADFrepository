@@ -6,13 +6,16 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"ds_filepath": {
+			"filepath": {
 				"type": "string"
 			},
-			"ds_directory": {
+			"filename": {
 				"type": "string"
 			},
-			"ds_filename": {
+			"input": {
+				"type": "string"
+			},
+			"output": {
 				"type": "string"
 			}
 		},
