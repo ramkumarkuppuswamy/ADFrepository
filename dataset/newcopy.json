@@ -6,13 +6,13 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"pp_filepath": {
+			"ds_filepath": {
 				"type": "string"
 			},
-			"pp_directory": {
+			"ds_directory": {
 				"type": "string"
 			},
-			"pp_filename": {
+			"ds_filename": {
 				"type": "string"
 			}
 		},
