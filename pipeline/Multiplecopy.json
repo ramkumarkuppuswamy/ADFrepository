@@ -100,7 +100,11 @@
 											"sink": {
 												"type": "DelimitedTextSink",
 												"storeSettings": {
-													"type": "AzureBlobFSWriteSettings"
+													"type": "AzureBlobFSWriteSettings",
+													"copyBehavior": {
+														"value": "@concat(formatDateTime(utcNow(),'yyyy-MM-dd'),'_',item().name)",
+														"type": "Expression"
+													}
 												},
 												"formatSettings": {
 													"type": "DelimitedTextWriteSettings",
