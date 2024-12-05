@@ -31,22 +31,32 @@
 				"inputs": [
 					{
 						"referenceName": "newcopy",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_filepath": {
+								"value": "@pipeline().parameters.filepath",
+								"type": "Expression"
+							},
+							"ds_directory": {
+								"value": "@pipeline().parameters.input",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
 		"parameters": {
-			"filepath": {
+			"pp_filepath": {
 				"type": "string"
 			},
-			"filename": {
+			"pp_input": {
 				"type": "string"
 			},
-			"input": {
+			"pp_output": {
 				"type": "string"
 			},
-			"output": {
+			"pp_filename": {
 				"type": "string"
 			}
 		},
