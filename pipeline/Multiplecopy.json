@@ -58,7 +58,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@activity('Filter1').outputitem().name",
+									"value": "@equals(item().name,'true')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
