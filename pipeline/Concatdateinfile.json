@@ -26,7 +26,26 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -34,11 +53,31 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"ds_filepath": {
-								"value": "@pipeline().parameters.filepath",
+								"value": "@pipeline().parameters.pp_filepath",
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.input",
+								"value": "@pipeline().parameters.pp_input",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "newcopy",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_filepath": {
+								"value": "@pipeline().parameters.pp_filepath",
+								"type": "Expression"
+							},
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_output",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.pp_filename",
 								"type": "Expression"
 							}
 						}
