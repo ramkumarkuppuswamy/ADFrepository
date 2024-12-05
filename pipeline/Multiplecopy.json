@@ -58,7 +58,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(item().name,'true')",
+									"value": "@equals(item().name,'SalesLTProduct.txt')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
