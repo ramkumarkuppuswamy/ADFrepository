@@ -24,7 +24,7 @@
 								"value": "@pipeline().parameters.pp_input",
 								"type": "Expression"
 							},
-							"wildcardFileName": "Mark*",
+							"wildcardFileName": "Sales*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
