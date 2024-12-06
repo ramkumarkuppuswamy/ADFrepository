@@ -24,7 +24,7 @@
 								"value": "@pipeline().parameters.pp_input",
 								"type": "Expression"
 							},
-							"wildcardFileName": "Market*",
+							"wildcardFileName": "Mark*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -34,8 +34,7 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "FlattenHierarchy"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
