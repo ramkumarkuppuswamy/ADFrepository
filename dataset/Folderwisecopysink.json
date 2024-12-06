@@ -30,7 +30,7 @@
 					"type": "Expression"
 				},
 				"fileSystem": {
-					"value": "output/Market/{@item().name}",
+					"value": "@dataset().ds_filepath",
 					"type": "Expression"
 				}
 			},
