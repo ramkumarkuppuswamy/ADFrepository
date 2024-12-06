@@ -82,7 +82,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "output/Market/",
+								"value": "output/Sales/",
 								"type": "Expression"
 							},
 							"ds_filename": {
