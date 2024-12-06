@@ -82,7 +82,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.pp_output",
+								"value": "output/Market/@item().name",
 								"type": "Expression"
 							},
 							"ds_filename": {
