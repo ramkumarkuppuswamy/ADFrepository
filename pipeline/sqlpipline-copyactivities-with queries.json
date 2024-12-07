@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy table to file",
+				"name": "copy table to file- SQL query",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -20,6 +20,74 @@
 						"sqlReaderQuery": {
 							"value": "@concat(\n    'select ProductID,ProductNumber,Color\nfrom [SalesLT].[Product]\nwhere color=''',pipeline().parameters.color,''''\n)",
 							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sqlpipelineoutput",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.color",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			},
+			{
+				"name": "copy table to file -Stored Procedure",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[dbo].[GetProductsByColorr]",
+						"storedProcedureParameters": {
+							"Color": {
+								"type": "String",
+								"value": {
+									"value": "@pipeline().parameters.color",
+									"type": "Expression"
+								}
+							}
 						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
