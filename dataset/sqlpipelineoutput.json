@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sales",
+				"fileName": "colorfile.txt",
 				"folderPath": "output",
 				"fileSystem": "project"
 			},
