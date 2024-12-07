@@ -1,9 +1,9 @@
 {
-	"name": "sqlpipeline-copyfulltable -to-file",
+	"name": "sqlpipline-copyactivities-with queries",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "copy table to file",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select Name,ProductNumber,Color\nfrom [SalesLT].[Product]\nwhere color='Red'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
