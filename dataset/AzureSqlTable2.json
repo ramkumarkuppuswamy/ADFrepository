@@ -15,7 +15,10 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Sales",
-			"table": ""
+			"table": {
+				"value": "@dataset().color",
+				"type": "Expression"
+			}
 		}
 	}
 }
