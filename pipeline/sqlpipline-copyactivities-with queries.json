@@ -56,7 +56,10 @@
 						"referenceName": "sqlpipelineoutput",
 						"type": "DatasetReference",
 						"parameters": {
-							"color": "Red"
+							"filename": {
+								"value": "@pipeline().parameters.color",
+								"type": "Expression"
+							}
 						}
 					}
 				]
