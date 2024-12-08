@@ -24,10 +24,45 @@
 					"dataset": {
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "colorcount",
+					"value": {
+						"value": "@activity('Lookup1').output.count",
+						"type": "Expression"
 					}
 				}
 			}
 		],
+		"variables": {
+			"color": {
+				"type": "String"
+			},
+			"colorcount": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
