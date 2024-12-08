@@ -119,7 +119,7 @@
 														"type": "Expression"
 													},
 													"ds_filename": {
-														"value": "@pipeline().parameters.pp_filename",
+														"value": "@activity('Get Metadata1').output.itemName",
 														"type": "Expression"
 													}
 												}
