@@ -78,6 +78,11 @@
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
+													"wildcardFolderPath": {
+														"value": "@pipeline().parameters.pp_input",
+														"type": "Expression"
+													},
+													"wildcardFileName": "Market*",
 													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
