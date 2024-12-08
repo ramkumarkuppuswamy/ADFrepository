@@ -78,6 +78,11 @@
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
+													"wildcardFolderPath": {
+														"value": "@pipeline().parameters.pp_input",
+														"type": "Expression"
+													},
+													"wildcardFileName": "Sales*",
 													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
@@ -119,7 +124,7 @@
 														"type": "Expression"
 													},
 													"ds_filename": {
-														"value": "@activity('Get Metadata1').output.childItems",
+														"value": "@pipeline().parameters.pp_filename",
 														"type": "Expression"
 													}
 												}
