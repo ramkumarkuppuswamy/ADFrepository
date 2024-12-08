@@ -139,7 +139,7 @@
 														"value": "@pipeline().parameters.pp_filepath",
 														"type": "Expression"
 													},
-													"ds_directory": "output/Sales/",
+													"ds_directory": "output/Market/",
 													"ds_filename": {
 														"value": "@pipeline().parameters.pp_filename",
 														"type": "Expression"
