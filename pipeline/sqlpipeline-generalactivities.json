@@ -31,8 +31,6 @@
 			{
 				"name": "Set variable1",
 				"type": "SetVariable",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup1",
@@ -56,11 +54,8 @@
 			}
 		],
 		"variables": {
-			"color": {
-				"type": "String"
-			},
 			"colorcount": {
-				"type": "String"
+				"type": "Integer"
 			}
 		},
 		"annotations": []
