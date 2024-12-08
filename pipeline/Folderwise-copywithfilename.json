@@ -107,7 +107,7 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "Folderwisecopysink",
+												"referenceName": "newcopy",
 												"type": "DatasetReference",
 												"parameters": {
 													"ds_filepath": {
@@ -119,7 +119,7 @@
 														"type": "Expression"
 													},
 													"ds_filename": {
-														"value": "@activity('Get Metadata1').output.itemName",
+														"value": "@activity('Get Metadata1').output.childItems",
 														"type": "Expression"
 													}
 												}
