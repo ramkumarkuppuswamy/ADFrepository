@@ -140,7 +140,7 @@
 														"type": "Expression"
 													},
 													"ds_directory": {
-														"value": "output/Market/",
+														"value": "@concat('output/Market/',item().name)",
 														"type": "Expression"
 													},
 													"ds_filename": {
