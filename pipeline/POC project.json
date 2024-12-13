@@ -88,7 +88,7 @@
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project1",
 					"baseParameters": {
 						"filepath ": {
-							"value": "@activity('Unzip file from staging to landing folder').output.filePath",
+							"value": "project / landing / SalesLT.zip",
 							"type": "Expression"
 						}
 					}
