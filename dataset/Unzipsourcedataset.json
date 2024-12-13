@@ -1,0 +1,35 @@
+{
+	"name": "Unzipsourcedataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "SalesLT.zip",
+				"folderPath": "staging",
+				"fileSystem": "project"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "ZipDeflate",
+			"compressionLevel": "Optimal",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000e�kY�\t�.gT\u0000\u0000q�\u0000\u0000\u0012\u0000\u0000\u0000SalesLTAddress.txt�}�r\u001cI����+\\�\u000fu�Sl_�Զ����\u0004����\u0013�\u0004b\u0018�`�B&���\u001b�0�����y�\u0011\u0001\u0002Dx\u0010�\u0011��*��P73է頻Y��������jX������z9[\f��/D�f���٦�\foW˯���Ф�v�Y}7\\͖���r���iy94�巫��y����1\u001b.3���\\��/����fh��i��\u001f/_6q��\u001e���__�\u0016W\u001b��",
+				"type": "String"
+			},
+			{
+				"name": "�O\\���u�\u001d�\u0011ƅj\u0004�ɶSɺ�+�;�T�\\z'xh\u0004c�c�c�e쿍=e��\u001b�}.�k_��~>\u001f�Wðy�}�x���.� :��|��Xf���x�/;���\u0017��ܺ����\u0017��O�/>�s�u�~�\u0013�k�j�x�\\�2f�)WY��V]p9c����T�����u�\u0017µ\u001ff}��y{���̾�^\u000e�ٟMX��k����4c��\"\u0014]",
+				"type": "String"
+			}
+		]
+	}
+}
