@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "landing/SalesLT.zip",
+				"folderPath": "landing",
 				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
