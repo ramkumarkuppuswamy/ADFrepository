@@ -5,6 +5,8 @@
 			{
 				"name": "Unzip file from staging to landing folder",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -85,7 +87,7 @@
 				"typeProperties": {
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project1",
 					"baseParameters": {
-						"File path ": {
+						"filepath ": {
 							"value": "@activity('Unzip file from staging to landing folder').output",
 							"type": "Expression"
 						}
