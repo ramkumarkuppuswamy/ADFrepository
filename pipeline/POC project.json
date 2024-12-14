@@ -103,7 +103,14 @@
 			{
 				"name": "Notebook2",
 				"type": "DatabricksNotebook",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "unzipped files fetched here with ADLS mounting",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -111,7 +118,20 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.1",
+					"baseParameters": {
+						"individualfilepath": {
+							"value": "@activity('unzipped files fetched here with ADLS mounting').output.path",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
