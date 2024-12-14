@@ -123,7 +123,7 @@
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.1",
 					"baseParameters": {
 						"individualfilepath": {
-							"value": "@activity('unzipped files fetched here with ADLS mounting').output.path",
+							"value": "@activity('unzipped files fetched here with ADLS mounting').output.result",
 							"type": "Expression"
 						}
 					}
@@ -136,6 +136,9 @@
 		],
 		"parameters": {
 			"filepath": {
+				"type": "string"
+			},
+			"individualfilepath": {
 				"type": "string"
 			}
 		},
