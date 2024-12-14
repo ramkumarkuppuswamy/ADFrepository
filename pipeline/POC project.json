@@ -152,9 +152,6 @@
 		"parameters": {
 			"filepath": {
 				"type": "string"
-			},
-			"individualfilepath": {
-				"type": "string"
 			}
 		},
 		"annotations": []
