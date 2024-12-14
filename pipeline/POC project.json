@@ -87,7 +87,7 @@
 				"typeProperties": {
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project1",
 					"baseParameters": {
-						"filepath ": {
+						"filepath": {
 							"value": "@pipeline().parameters.filepath",
 							"type": "Expression"
 						}
