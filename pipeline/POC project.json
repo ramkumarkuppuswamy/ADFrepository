@@ -96,11 +96,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"landingpath": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
