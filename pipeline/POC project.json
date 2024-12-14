@@ -99,6 +99,26 @@
 					"referenceName": "AzureDatabricks1",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "unzipped files fetched here with ADLS mounting",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput",
+						"type": "Expression"
+					},
+					"batchCount": 2
+				}
 			}
 		],
 		"parameters": {
