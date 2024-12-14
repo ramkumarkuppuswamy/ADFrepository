@@ -132,7 +132,7 @@
 								"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.1",
 								"baseParameters": {
 									"filename": {
-										"value": "@item()",
+										"value": "@replace(substring(item(), 0, indexOf(item(), '.')), 'SalesLT', '')\r\n",
 										"type": "Expression"
 									}
 								}
