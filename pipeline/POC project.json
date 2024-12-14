@@ -134,7 +134,7 @@
 							"typeProperties": {
 								"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.1",
 								"baseParameters": {
-									"item": {
+									"filename": {
 										"value": "@item()",
 										"type": "Expression"
 									}
