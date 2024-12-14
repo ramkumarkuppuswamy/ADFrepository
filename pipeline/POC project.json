@@ -114,7 +114,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput",
+						"value": "@json(activity('unzipped files fetched here with ADLS mounting').output.runOutput)\r\n",
 						"type": "Expression"
 					},
 					"batchCount": 2,
