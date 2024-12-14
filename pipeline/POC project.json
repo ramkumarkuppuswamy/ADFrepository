@@ -68,6 +68,8 @@
 			{
 				"name": "unzipped files fetched here with ADLS mounting",
 				"type": "DatabricksNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Unzip file from staging to landing folder",
