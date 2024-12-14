@@ -68,8 +68,6 @@
 			{
 				"name": "unzipped files fetched here with ADLS mounting",
 				"type": "DatabricksNotebook",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Unzip file from staging to landing folder",
@@ -91,39 +89,6 @@
 					"baseParameters": {
 						"filepath": {
 							"value": "@pipeline().parameters.filepath",
-							"type": "Expression"
-						}
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "Notebook2",
-				"type": "DatabricksNotebook",
-				"dependsOn": [
-					{
-						"activity": "unzipped files fetched here with ADLS mounting",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.1",
-					"baseParameters": {
-						"individualfilepath": {
-							"value": "@activity('unzipped files fetched here with ADLS mounting').output.result",
 							"type": "Expression"
 						}
 					}
