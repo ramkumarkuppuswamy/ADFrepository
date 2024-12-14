@@ -103,6 +103,8 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "unzipped files fetched here with ADLS mounting",
@@ -114,10 +116,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@json(activity('unzipped files fetched here with ADLS mounting').output.runOutput)\r\n",
+						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput",
 						"type": "Expression"
 					},
-					"batchCount": 2,
 					"activities": [
 						{
 							"name": "Notebook1",
