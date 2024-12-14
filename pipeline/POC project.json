@@ -87,10 +87,7 @@
 				"typeProperties": {
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project1",
 					"baseParameters": {
-						"filepath ": {
-							"value": "@activity('Unzip file from staging to landing folder').output",
-							"type": "Expression"
-						}
+						"filepath ": "/mnt/dbadlsmount/landing/SalesLT.zip"
 					}
 				},
 				"linkedServiceName": {
