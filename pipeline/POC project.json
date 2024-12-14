@@ -87,7 +87,7 @@
 				"typeProperties": {
 					"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project1",
 					"baseParameters": {
-						"filepath ": "/mnt/dbadlsmount/landing/SalesLT.zip"
+						"filepath ": "\"/mnt/dbadlsmount/landing/SalesLT.zip\""
 					}
 				},
 				"linkedServiceName": {
