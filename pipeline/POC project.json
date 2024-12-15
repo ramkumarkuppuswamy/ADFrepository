@@ -115,6 +115,7 @@
 						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput\r\n",
 						"type": "Expression"
 					},
+					"batchCount": 2,
 					"activities": [
 						{
 							"name": "Notebook1",
