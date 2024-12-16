@@ -68,6 +68,8 @@
 			{
 				"name": "unzipped files fetched here with ADLS mounting",
 				"type": "DatabricksNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Unzip file from staging to landing folder",
@@ -101,6 +103,8 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "unzipped files fetched here with ADLS mounting",
@@ -149,8 +153,6 @@
 			{
 				"name": "Set variable1",
 				"type": "SetVariable",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "ForEach1",
@@ -165,17 +167,22 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "",
-					"value": ""
+					"variableName": "bronzeoutputpath",
+					"value": {
+						"value": "@activity('Notebook1').output.runOutput",
+						"type": "Expression"
+					}
 				}
 			}
 		],
 		"parameters": {
 			"filepath": {
 				"type": "string"
-			},
+			}
+		},
+		"variables": {
 			"bronzeoutputpath": {
-				"type": "string"
+				"type": "String"
 			}
 		},
 		"annotations": []
