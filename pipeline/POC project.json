@@ -115,7 +115,8 @@
 						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput\r\n",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
+					"batchCount": 4,
 					"activities": [
 						{
 							"name": "Notebook1",
@@ -142,32 +143,32 @@
 								"referenceName": "AzureDatabricks1",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Notebook1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "bronzeoutputpath",
+								"value": {
+									"value": "@activity('Notebook1').output.runOutput",
+									"type": "Expression"
+								}
+							}
 						}
 					]
-				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "ForEach1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "bronzeoutputpath",
-					"value": {
-						"value": "@activity('Notebook1').output.runOutput",
-						"type": "Expression"
-					}
 				}
 			}
 		],
