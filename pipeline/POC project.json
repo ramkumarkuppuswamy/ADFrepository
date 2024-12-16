@@ -68,8 +68,6 @@
 			{
 				"name": "unzipped files fetched here with ADLS mounting",
 				"type": "DatabricksNotebook",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Unzip file from staging to landing folder",
@@ -103,8 +101,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "unzipped files fetched here with ADLS mounting",
