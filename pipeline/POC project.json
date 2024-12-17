@@ -170,7 +170,7 @@
 						{
 							"name": "Notebook2",
 							"type": "DatabricksNotebook",
-							"state": "Inactive",
+							"state": "Active",
 							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
