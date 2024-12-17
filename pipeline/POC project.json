@@ -189,7 +189,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"notebookPath": "/Users/ramkumar.aehss@gmail.com/POC project 1.2",
+								"notebookPath": "/Users/ramkumar.aehss@gmail.com/POCprojectSilverloading",
 								"baseParameters": {
 									"bronzeoutputpath": {
 										"value": "@variables('bronzeoutputpath')",
