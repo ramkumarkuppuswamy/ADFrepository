@@ -115,7 +115,8 @@
 						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput\r\n",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
+					"batchCount": 10,
 					"activities": [
 						{
 							"name": "Notebook1",
