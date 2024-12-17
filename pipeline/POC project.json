@@ -115,8 +115,7 @@
 						"value": "@activity('unzipped files fetched here with ADLS mounting').output.runOutput\r\n",
 						"type": "Expression"
 					},
-					"isSequential": false,
-					"batchCount": 10,
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Notebook1",
@@ -171,6 +170,8 @@
 						{
 							"name": "Notebook2",
 							"type": "DatabricksNotebook",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Set variable1",
