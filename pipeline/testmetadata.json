@@ -132,6 +132,14 @@
 										"ds_filepath": {
 											"value": "@pipeline().parameters.Filepath",
 											"type": "Expression"
+										},
+										"ds_directory": {
+											"value": "@pipeline().parameters.output",
+											"type": "Expression"
+										},
+										"ds_filename": {
+											"value": "@item().name",
+											"type": "Expression"
 										}
 									}
 								}
