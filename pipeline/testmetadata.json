@@ -20,11 +20,11 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"ds_filepath": {
-								"value": "@pipeline().parameters.Filepath",
+								"value": "@pipeline().parameters.pp_Filepath",
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.input",
+								"value": "@pipeline().parameters.pp_input",
 								"type": "Expression"
 							}
 						}
