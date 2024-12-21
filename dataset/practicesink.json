@@ -8,6 +8,9 @@
 		"parameters": {
 			"ds_filepath": {
 				"type": "string"
+			},
+			"ds_directory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
