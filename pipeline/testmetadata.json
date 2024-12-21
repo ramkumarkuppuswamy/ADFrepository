@@ -122,11 +122,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"ds_filepath": {
-											"value": "@concat(pipeline().parameters.pp_Filepath, '/', pipeline().parameters.pp_output, '/', item().name)\n",
+											"value": "@pipeline().parameters.pp_Filepath",
 											"type": "Expression"
 										},
 										"ds_directory": {
-											"value": "@pipeline().parameters.pp_Filepath",
+											"value": "@concat(pipeline().parameters.pp_output, '/', item().name)\n",
 											"type": "Expression"
 										}
 									}
