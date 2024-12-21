@@ -77,8 +77,13 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"fileListPath": {
-											"value": "@concat(pipeline().parameters.Filepath, '/', pipeline().parameters.input, '/', item().name)\n",
+										"recursive": true,
+										"wildcardFolderPath": {
+											"value": "@pipeline().parameters.input",
+											"type": "Expression"
+										},
+										"wildcardFileName": {
+											"value": "@item().name",
 											"type": "Expression"
 										},
 										"enablePartitionDiscovery": false
@@ -110,42 +115,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText4",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.Filepath",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.input",
-											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@pipeline().parameters.filename",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "DelimitedText6",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "DelimitedText5",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.Filepath",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.output",
-											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@pipeline().parameters.filename",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "DelimitedText7",
+									"type": "DatasetReference"
 								}
 							]
 						}
