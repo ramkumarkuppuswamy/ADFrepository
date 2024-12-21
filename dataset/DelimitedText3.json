@@ -9,12 +9,6 @@
 			"ds_filepath": {
 				"type": "String"
 			},
-			"ds_directory": {
-				"type": "String"
-			},
-			"ds_input": {
-				"type": "String"
-			},
 			"ds_output": {
 				"type": "String"
 			}
