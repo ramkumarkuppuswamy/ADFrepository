@@ -21,7 +21,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "input",
+				"folderPath": "output",
 				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
