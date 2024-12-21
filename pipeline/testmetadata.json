@@ -67,10 +67,7 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"fileListPath": {
-											"value": "@item()",
-											"type": "Expression"
-										},
+										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -101,7 +98,21 @@
 							"inputs": [
 								{
 									"referenceName": "DelimitedText2",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_filepath": {
+											"value": "@pipeline().parameters.pp_filepath",
+											"type": "Expression"
+										},
+										"ds_directory": {
+											"value": "@pipeline().parameters.pp_inputdirectory",
+											"type": "Expression"
+										},
+										"ds_filename": {
+											"value": "@pipeline().parameters.pp_filename",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
