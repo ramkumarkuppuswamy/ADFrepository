@@ -142,7 +142,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@item().name",
+											"value": "@pipeline().parameters.filename",
 											"type": "Expression"
 										}
 									}
@@ -165,11 +165,6 @@
 			},
 			"filename": {
 				"type": "string"
-			}
-		},
-		"variables": {
-			"copyoutput": {
-				"type": "String"
 			}
 		},
 		"annotations": []
