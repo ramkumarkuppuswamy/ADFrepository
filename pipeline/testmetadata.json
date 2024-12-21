@@ -112,17 +112,7 @@
 							"inputs": [
 								{
 									"referenceName": "DelimitedText2",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.pp_filepath",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.pp_directory",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
