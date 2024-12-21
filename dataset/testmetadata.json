@@ -6,10 +6,10 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"ds_filepath": {
+			"ds_testmetafilepath": {
 				"type": "string"
 			},
-			"ds_directory": {
+			"ds_testmetadirectory": {
 				"type": "string"
 			}
 		},
@@ -19,11 +19,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@dataset().ds_directory",
+					"value": "@dataset().ds_testmetafilepath",
 					"type": "Expression"
 				},
 				"fileSystem": {
-					"value": "@dataset().ds_filepath",
+					"value": "@dataset().ds_testmetafilepath",
 					"type": "Expression"
 				}
 			},
