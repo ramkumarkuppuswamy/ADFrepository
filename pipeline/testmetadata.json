@@ -78,7 +78,7 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"fileListPath": {
-											"value": "@concat('project/input/',item().name)",
+											"value": "@concat(pipeline().parameters.pp_filepath,pipeline().parameters.pp_inputdirectory,item().name)",
 											"type": "Expression"
 										},
 										"enablePartitionDiscovery": false
