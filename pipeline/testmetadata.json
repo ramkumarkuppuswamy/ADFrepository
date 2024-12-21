@@ -91,7 +91,8 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobFSWriteSettings",
+										"copyBehavior": "PreserveHierarchy"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -120,16 +121,8 @@
 									"referenceName": "practicesink",
 									"type": "DatasetReference",
 									"parameters": {
-										"ds_filepath": {
-											"value": "@pipeline().parameters.pp_Filepath",
-											"type": "Expression"
-										},
 										"ds_directory": {
-											"value": "@pipeline().parameters.pp_output",
-											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@item().name",
+											"value": "@concat(pipeline().parameters.pp_Filepath, '/', pipeline().parameters.pp_output, '/', item().name)\r\n",
 											"type": "Expression"
 										}
 									}
