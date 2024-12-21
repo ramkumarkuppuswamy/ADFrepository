@@ -34,10 +34,10 @@
 			"pp_filepath": {
 				"type": "string"
 			},
-			"pp_directory": {
+			"pp_input": {
 				"type": "string"
 			},
-			"pp_filename": {
+			"pp_output": {
 				"type": "string"
 			}
 		},
