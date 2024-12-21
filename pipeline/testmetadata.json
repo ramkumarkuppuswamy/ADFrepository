@@ -32,8 +32,8 @@
 				}
 			},
 			{
-				"name": "If Condition1",
-				"type": "IfCondition",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata1",
@@ -44,22 +44,12 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"expression": {
-						"value": "@greater(length(activity('Get Metadata1').output.childItems),0)",
+					"items": {
+						"value": "@activity('Get Metadata1').output.childItems",
 						"type": "Expression"
 					},
-					"ifFalseActivities": [
-						{
-							"name": "Wait1",
-							"type": "Wait",
-							"dependsOn": [],
-							"userProperties": [],
-							"typeProperties": {
-								"waitTimeInSeconds": 10
-							}
-						}
-					],
-					"ifTrueActivities": [
+					"isSequential": true,
+					"activities": [
 						{
 							"name": "Copy data1",
 							"type": "Copy",
@@ -77,12 +67,10 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
-										"wildcardFolderPath": {
-											"value": "@pipeline().parameters.pp_inputdirectory",
+										"fileListPath": {
+											"value": "@item()",
 											"type": "Expression"
 										},
-										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -92,8 +80,7 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings",
-										"copyBehavior": "FlattenHierarchy"
+										"type": "AzureBlobFSWriteSettings"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
