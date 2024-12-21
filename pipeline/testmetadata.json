@@ -147,7 +147,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@pipeline().parameters.filename",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
