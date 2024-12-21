@@ -146,6 +146,9 @@
 			},
 			"pp_input": {
 				"type": "string"
+			},
+			"pp_output": {
+				"type": "string"
 			}
 		},
 		"annotations": []
