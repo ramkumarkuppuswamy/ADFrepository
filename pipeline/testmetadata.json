@@ -77,10 +77,12 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"fileListPath": {
-											"value": "@activity('Get Metadata1').output.childItems",
+										"recursive": true,
+										"wildcardFolderPath": {
+											"value": "@pipeline().parameters.pp_inputdirectory",
 											"type": "Expression"
 										},
+										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
