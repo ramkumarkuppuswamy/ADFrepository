@@ -9,10 +9,10 @@
 			"ds_filepath": {
 				"type": "string"
 			},
-			"ds_directory": {
+			"ds_filename": {
 				"type": "string"
 			},
-			"ds_filename": {
+			"ds_input": {
 				"type": "string"
 			}
 		},
