@@ -9,7 +9,7 @@
 			"ds_filepath": {
 				"type": "string"
 			},
-			"ds_directory": {
+			"ds_output": {
 				"type": "string"
 			},
 			"ds_filename": {
