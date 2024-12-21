@@ -108,6 +108,11 @@
 				"type": "string"
 			}
 		},
+		"variables": {
+			"copyoutput": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
