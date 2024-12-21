@@ -124,16 +124,8 @@
 											"value": "@pipeline().parameters.pp_filepath",
 											"type": "Expression"
 										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.pp_filename",
-											"type": "Expression"
-										},
-										"ds_input": {
-											"value": "@pipeline().parameters.pp_input",
-											"type": "Expression"
-										},
 										"ds_output": {
-											"value": "@pipeline().parameters.pp_output",
+											"value": "@pipeline().parameters.pp_filename",
 											"type": "Expression"
 										}
 									}
@@ -148,16 +140,13 @@
 			"pp_filepath": {
 				"type": "string"
 			},
-			"pp_input": {
-				"type": "string"
-			},
-			"pp_output": {
-				"type": "string"
-			},
-			"pp_directory": {
+			"pp_inputdirectory": {
 				"type": "string"
 			},
 			"pp_filename": {
+				"type": "string"
+			},
+			"pp_oututdirectory": {
 				"type": "string"
 			}
 		},
