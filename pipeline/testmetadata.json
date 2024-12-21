@@ -44,8 +44,6 @@
 			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata1",
@@ -121,6 +119,10 @@
 										},
 										"ds_directory": {
 											"value": "@pipeline().parameters.pp_inputdirectory",
+											"type": "Expression"
+										},
+										"ds_filename": {
+											"value": "@pipeline().parameters.pp_filename",
 											"type": "Expression"
 										}
 									}
