@@ -121,8 +121,12 @@
 									"referenceName": "practicesink",
 									"type": "DatasetReference",
 									"parameters": {
+										"ds_filepath": {
+											"value": "@concat(pipeline().parameters.pp_Filepath, '/', pipeline().parameters.pp_output, '/', item().name)\n",
+											"type": "Expression"
+										},
 										"ds_directory": {
-											"value": "@concat(pipeline().parameters.pp_Filepath, '/', pipeline().parameters.pp_output, '/', item().name)\r\n",
+											"value": "@pipeline().parameters.pp_Filepath",
 											"type": "Expression"
 										}
 									}
