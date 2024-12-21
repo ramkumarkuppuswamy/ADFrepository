@@ -9,8 +9,11 @@
 			"ds_filepath": {
 				"type": "String"
 			},
-			"ds_output": {
+			"ds_directory": {
 				"type": "String"
+			},
+			"ds_filename": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
