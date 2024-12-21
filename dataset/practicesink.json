@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"ds_directory": {
+			"ds_filepath": {
 				"type": "string"
 			}
 		},
