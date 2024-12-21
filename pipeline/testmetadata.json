@@ -131,7 +131,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DelimitedText3",
+									"referenceName": "testoutput",
 									"type": "DatasetReference",
 									"parameters": {
 										"ds_filepath": {
