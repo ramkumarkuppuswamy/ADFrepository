@@ -77,7 +77,10 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
+										"fileListPath": {
+											"value": "@concat('project/',item().name)",
+											"type": "Expression"
+										},
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
