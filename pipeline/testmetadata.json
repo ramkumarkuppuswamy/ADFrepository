@@ -77,10 +77,8 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
-										"wildcardFolderPath": "input",
-										"wildcardFileName": {
-											"value": "@item().name",
+										"fileListPath": {
+											"value": "@concat(pipeline().parameters.Filepath, '/', pipeline().parameters.input, '/', item().name)\n",
 											"type": "Expression"
 										},
 										"enablePartitionDiscovery": false
